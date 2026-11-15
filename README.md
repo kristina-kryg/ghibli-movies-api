@@ -1,16 +1,20 @@
-# React + Vite
+# Studio Ghibli Movies
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React web application that fetches and displays Studio Ghibli films from the [Ghibli API](https://ghibliapi.vercel.app/). Movie cards show each film's poster, title, and release year.
 
-Currently, two official plugins are available:
+## Live Preview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Available scripts
 
-## React Compiler
+- `npm run dev` — start the Vite development server.
+- `npm run build` — create a production build in `dist/`.
+- `npm run preview` — preview the production build locally.
+- `npm run lint` — run ESLint.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Built with
 
-## Expanding the ESLint configuration
+- React
+- Vite
+- [Ghibli API](https://ghibliapi.vercel.app/)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The API request is handled in `src/services/api.js`; the home page loads the films and renders them as movie cards.
