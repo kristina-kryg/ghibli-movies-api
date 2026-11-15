@@ -6,6 +6,10 @@ A simple React web application that fetches and displays Studio Ghibli films fro
 
 https://kristina-kryg.github.io/ghibli-movies-api/
 
+## Deploying to GitHub Pages
+
+The GitHub Actions workflow builds the app and deploys the generated `dist/` folder whenever changes are pushed to `main`. In the repository settings, open **Settings → Pages** and set **Build and deployment → Source** to **GitHub Actions**. You can also run the workflow manually from the **Actions** tab.
+
 ## Available scripts
 
 - `npm run dev` — start the Vite development server.
