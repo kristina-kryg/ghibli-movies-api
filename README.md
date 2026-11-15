@@ -2,7 +2,9 @@
 
 A simple React web application that fetches and displays Studio Ghibli films from the [Ghibli API](https://ghibliapi.vercel.app/). Movie cards show each film's poster, title, and release year.
 
-## Live Preview
+## See Live Preview
+
+https://kristina-kryg.github.io/ghibli-movies-api/
 
 ## Available scripts
 
