@@ -3,6 +3,6 @@ import { defineConfig } from "vite";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/ghibli-movies-api",
+  base: "/ghibli-movies-api/",
   plugins: [react()],
 });
