@@ -1,4 +1,4 @@
-import MovieCard from "../components/movieCard";
+import MovieCard from "../components/MovieCard.jsx";
 import { getMovies } from "../services/api.js";
 import { useState, useEffect } from "react";
 
