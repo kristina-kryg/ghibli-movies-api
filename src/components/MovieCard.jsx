@@ -1,6 +1,9 @@
+import { useState } from "react";
+
 function MovieCard({ movie }) {
+  const [isLiked, setLike] = useState(false);
   function onLiked() {
-    alert("clicked");
+    setLike(!isLiked);
   }
   return (
     <div className="movie-card">
@@ -8,7 +11,9 @@ function MovieCard({ movie }) {
         <img src={movie.image} alt={movie.title} />
         <div className="movie-overlay">
           <button className="favorite-btn" onClick={onLiked}>
-            <i className="fa-regular fa-heart"></i>
+            <i
+              className={`${isLiked ? "fa-solid" : "fa-regular"} fa-heart`}
+            ></i>
           </button>
         </div>
       </div>
