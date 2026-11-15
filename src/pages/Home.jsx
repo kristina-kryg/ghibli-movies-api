@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 
 function Home() {
   const [searchQuery, setSearchQuery] = useState("");
+  const [submittedQuery, setSubmittedQuery] = useState("");
   const [movies, setMovies] = useState([]);
-  const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -15,7 +15,6 @@ function Home() {
         setMovies(GhibliMovies);
       } catch (err) {
         console.log(err);
-        setError("Failed to load movies...");
       } finally {
         setLoading(false);
       }
@@ -26,8 +25,12 @@ function Home() {
 
   function handleSearch(event) {
     event.preventDefault();
-    alert(searchQuery);
+    setSubmittedQuery(searchQuery);
   }
+
+  const filteredMovies = movies.filter((movie) =>
+    movie.title.toLowerCase().includes(submittedQuery.trim().toLowerCase())
+  );
 
   return (
     <div className="home">
@@ -36,6 +39,8 @@ function Home() {
           type="text"
           placeholder="Search for movies..."
           className="search-input"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
         />
         <button type="submit" className="search-button">
           Search
@@ -43,7 +48,7 @@ function Home() {
       </form>
 
       <div className="movies-grid">
-        {movies.map((movie) => (
+        {filteredMovies.map((movie) => (
           <MovieCard movie={movie} key={movie.id} />
         ))}
       </div>
